@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">BestTrip</string>
-
-    <string name="start_point_tool_tip">Input your starting point</string>
+    <string name="title_activity_maps">Search Map</string>
 </resources>
