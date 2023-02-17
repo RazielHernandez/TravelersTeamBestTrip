@@ -1,4 +1,4 @@
-package com.example.carloshernandez_oscarmiralles_mapd711_assignment4.Repo.network
+package centennialcollege.ca.besttrip.repo.network
 /**
  * MAPD711 Assignment 3
  * @Authors

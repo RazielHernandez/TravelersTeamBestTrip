@@ -1,4 +1,4 @@
-package com.example.carloshernandez_oscarmiralles_mapd711_assignment4.DataModel
+package centennialcollege.ca.besttrip.datamodel
 /**
  * MAPD711 Assignment 3
  * @Authors

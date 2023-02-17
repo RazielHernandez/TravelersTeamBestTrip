@@ -1,4 +1,4 @@
-package com.example.carloshernandez_oscarmiralles_mapd711_assignment4.Repo.network
+package centennialcollege.ca.besttrip.repo.network
 /**
  * MAPD711 Assignment 3
  * @Authors
@@ -7,8 +7,8 @@ package com.example.carloshernandez_oscarmiralles_mapd711_assignment4.Repo.netwo
  * Student Name: Carlos Hernandez Galvez
  * Student ID: 301290263
  **/
-import com.example.carloshernandez_oscarmiralles_mapd711_assignment4.DataModel.PlaceDetails
-import com.example.carloshernandez_oscarmiralles_mapd711_assignment4.DataModel.PlaceResponse
+import centennialcollege.ca.besttrip.datamodel.PlaceDetails
+import centennialcollege.ca.besttrip.datamodel.PlaceResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -38,21 +38,4 @@ interface PlacesRetrofitAPI {
         @Query("place_id") place_id: String?,
         @Query("key") key: String = "AIzaSyDjTKoWhmal9SZXzoti5lpDJuJ7MP3TM_E"
     ): PlaceDetails
-
-    //@GET("json?keyword=cruise&location=-33.8670522%2C151.1957362")
-    /*@GET("json?location=-33.8670522,151.1957362")
-    suspend fun getPlacesNearTester(
-        @Query("radius") radius: Int = 1500,
-        @Query("type") category: String?,
-        @Query("key") key: String = "AIzaSyDjTKoWhmal9SZXzoti5lpDJuJ7MP3TM_E"
-    ): PlaceResponse*/
-
-    /*
-    @GET("json")
-    suspend fun getPlacesNearTester(
-        @Query("location") location: String = "-33.8670522,151.1957362",
-        @Query("radius") radius: Int = 1500,
-        @Query("type") category: String?,
-        @Query("key") key: String = "AIzaSyDjTKoWhmal9SZXzoti5lpDJuJ7MP3TM_E"
-    ): PlaceResponse*/
 }
