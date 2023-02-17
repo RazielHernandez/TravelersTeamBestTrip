@@ -52,14 +52,14 @@ class MainActivity : AppCompatActivity() {
             ) {
 
                 // Saves it in a database
-             //   var register = ContentValues()
-             //   register.put("year", year)
-             //   register.put("brand", brand)
-             //   register.put("model", model)
-             //   register.put("fuel", fuel)
+/*                var register = ContentValues()
+                register.put("year", year)
+                register.put("brand", brand)
+                register.put("model", model)
+                register.put("fuel", fuel)
 
-             //   database.insert("Vehicle", null, register)
-
+                database.insert("Vehicle", null, register)
+*/
                 // Saves it in a SharedPreferences
                 var editor:SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("year",year)
