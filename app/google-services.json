@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "304879417113",
+    "project_id": "travelersteam-5d905",
+    "storage_bucket": "travelersteam-5d905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304879417113:android:c80ccf4812dc430941f788",
+        "android_client_info": {
+          "package_name": "centennialcollege.ca.besttrip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304879417113-eqtg99akop7otm7jo4c4ddn2v1ngrep4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7OXUBJ5td9by0Tkx8Hnpsq54hIDL2Xz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304879417113-eqtg99akop7otm7jo4c4ddn2v1ngrep4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
