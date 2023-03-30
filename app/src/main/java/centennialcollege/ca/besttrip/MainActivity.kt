@@ -2,52 +2,57 @@ package centennialcollege.ca.besttrip
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
+import centennialcollege.ca.besttrip.repo.network.TravelersService
+import centennialcollege.ca.besttrip.viewModel.TravelersViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var mMap: GoogleMap
+    //private lateinit var viewModel: TravelersViewModel
+
+    companion object{
+        const val TAG = "centennialcollege.ca.besttrip:MainActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*viewModel = ViewModelProvider(this)[TravelersViewModel::class.java]
 
+        viewModel.getProductList()
+        viewModel.users.observe(this) {
+            Log.e("TAG","${it.users.size} users were founded")
+        }
 
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
+        val myButton = findViewById<Button>(R.id.route_search_button)
+        myButton.setOnClickListener {
+            Log.e("TAG","Testing")
+            //var listOfUsers = TravelersService.retrofit.getAllUsers()
+        }*/
+        val db = Firebase.firestore
+        db.collection("travelers_users")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
+            }
 
 
     }
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(
-            MarkerOptions()
-            .position(sydney)
-            .title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-    }
-
-    //AIzaSyCR41Pd2tXB18qmZVIYsBzeT074TZdx2E8
 
 }

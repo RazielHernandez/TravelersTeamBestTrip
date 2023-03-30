@@ -26,7 +26,7 @@ class RouteActivity: AppCompatActivity(), OnMapReadyCallback {
 
         //fuelConsumptionReader().fuelConsumptionReader(context = this, R.raw.fuel_consumption_ratings_2023)
         val reader = FuelConsumptionProvider(context1 = this, id1 = R.raw.fuel_consumption_ratings_2023)
-        val record = reader.fuelConsumptionSearch("2023","Acura","MDX SH-AWD Type S")
+        val record = reader.fuelConsumptionSearch("2002","Acura","MDX SH-AWD Type S")
 
         Log.e(TAG, "Your car "+record.model+"/"+record.maker)
         Log.e(TAG, "Has a gas consumption: "+record.fuelOnCity+" - "+record.fuelOnHighway+" - "+record.fuelOnCombined)
